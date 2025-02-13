@@ -5,5 +5,12 @@ let amigos = [];
 
 // Funcion para agregar amigos
 function agregarAmigos(){
-    let nombre = document.getElementById("amigo")
+    let nombres = document.getElementById("amigo").ariaValueText
+
+    if (nombres == "") {
+        alert("Por favor, inserte un nombre");
+        console.log("ALERTA")
+    } else {
+        amigos.push(nombres);
+    }
 }
