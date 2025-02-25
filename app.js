@@ -3,7 +3,6 @@
 // Array o arreglo con nombres
 let amigos = [];
 let nombreAmigo = document.querySelector('input').value;
-let listaAmigos = document.getElementById('listaAmigos');
 
 // Funcion para agregar amigos - Envía una alerta si no se ingresa un nombre válido, de lo contrario lo suma a la lista 'amigos'
 
@@ -12,28 +11,26 @@ function agregarAmigo(){
         alert('Por favor ingrese un nombre');
     } else {
         amigos.push(nombreAmigo);
-        
-        console.log(amigos);
-        actualizarLista();
-        limpiarCaja();
-        return;
     }
-}
 
-// Se limpian los datos de la caja para ingresar un nombre nuevo
+    actualizarLista();
+    limpiarCaja();
+    return;
+}
 
 function limpiarCaja() {
     document.querySelector('input').value = '';
 }
 
 function actualizarLista() {
+    let listaAmigos = document.getElementById('listaAmigos');
     listaAmigos.innerHTML = "";
 
-    for (let i = 0; i < amigos.length; i++){
-        let nuevosNombres = document.createElement('li');
-        nuevosNombres.textContent = amigos[i];
-        listaAmigos.appendChild(nuevosNombres);
-        return listaAmigos;
+    for (var i = 0; i <= amigos.length; i++){
+        let nuevoNombre = document.createElement('li');
+        nuevoNombre.textContent = amigos[i];
+        listaAmigos.appendChild(nuevoNombre);
+        return;
     }
 }
 
