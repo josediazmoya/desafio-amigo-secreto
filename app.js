@@ -3,14 +3,18 @@
 // Array o arreglo con nombres
 let amigos = [];
 
-// Funcion para agregar amigos
-function agregarAmigos(){
-    let nombres = document.getElementById("amigo").ariaValueText
+// Funcion para agregar amigos - Envía una alerta si no se ingresa un nombre válido, de lo contrario lo suma a la lista 'amigos'
 
-    if (nombres == "") {
-        alert("Por favor, inserte un nombre");
-        console.log("ALERTA")
+function agregarAmigo(){
+    let nombreAmigo = document.querySelector('input').value;
+
+    if (nombreAmigo == ' ') {
+        alert('Por favor ingrese un nombre');
     } else {
-        amigos.push(nombres);
+        amigos.push(nombreAmigo);
+        
+        // Se limpian los datos de la caja para ingresar un nombre nuevo
+        document.querySelector('input').value = '';
+        console.log(amigos);
     }
 }
