@@ -50,6 +50,9 @@ function sortearAmigo() {
        
     let amigoAleatorio = amigos[Math.floor(Math.random() * amigos.length)]; // Sorteamos un amigo de la lista, redondeando los decimales
     let amigoGanador = document.getElementById('resultado'); // Se asigna el ganador al elemento del HTML
-    amigoGanador.innerHTML = `¡Que suerte! ${amigoAleatorio} ganó el sorteo del Amigo Secreto`; // Mostramos el resultado del sorteo
+    amigoGanador.innerHTML = `¡Qué suerte ${amigoAleatorio} ganó el sorteo del Amigo Secreto!`; // Mostramos el resultado del sorteo
+
+    let limpiarLista = document.getElementById('listaAmigos');
+    limpiarLista.innerHTML = '';
     return;
 }
