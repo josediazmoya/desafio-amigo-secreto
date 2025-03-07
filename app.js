@@ -33,9 +33,9 @@ function actualizarLista() {
     listaAmigos.innerHTML = "";
 
     for (let i = 0; i < amigos.length; i++){
-        let nuevoNombre = document.createElement('li');
-        nuevoNombre.textContent = amigos[i];
-        listaAmigos.appendChild(nuevoNombre);
+        let nuevoNombre = document.createElement('li'); // Creamos un nuevo elemento para cada amigo
+        nuevoNombre.textContent = amigos[i]; // Agregamos el nombre del amigo al elemento
+        listaAmigos.appendChild(nuevoNombre); // Agregamos el elemento a la lista mostrada en pantalla
     }
     return;
 }
@@ -43,13 +43,13 @@ function actualizarLista() {
 // Funcion para sortear amigos
 
 function sortearAmigo() {
-    let sorteo = amigos[Math.floor(Math.random()*10+1)];
-
-    if (amigos = ' ') {
-        alert('No hay amigos para sortear');
+    if (amigos.length === 0) { // Si no hay amigos en la lista no se hace el sorteo
+        alert('No hay amigos para sortear, agregue al menos 3 nombres para mejor funcionamiento');
         return;
-    } else {
-        
     }
-    return sorteo;
+       
+    let amigoAleatorio = amigos[Math.floor(Math.random() * amigos.length)]; // Sorteamos un amigo de la lista, redondeando los decimales
+    let amigoGanador = document.getElementById('resultado'); // Se asigna el ganador al elemento del HTML
+    amigoGanador.innerHTML = `¡Que suerte! ${amigoAleatorio} ganó el sorteo del Amigo Secreto`; // Mostramos el resultado del sorteo
+    return;
 }
